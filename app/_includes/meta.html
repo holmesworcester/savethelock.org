@@ -1,4 +1,4 @@
-{% capture title %}{% if page.title != '' %}{{ page.title }} |{% endif %}{{ site.name }}{% endcapture %}
+{% capture title %}{% if page.title %}{{ page.title }} |{% endif %}{{ site.name }}{% endcapture %}
 {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 {% capture sharetitle %}{% if site.sharetitle %}{{ site.sharetitle }}{% else %}{% if page.sharetitle %}{{ page.sharetitle }}{% else %}{{ title }}{% endif %}{% endif %}{% endcapture %}
 {% capture twittertext %}{% if site.twittertext %}{{ site.twittertext }}{% else %}{% if page.twittertext %}{{ page.twittertext }}{% else %}{{ sharetitle }}{% endif %}{% endif %}{% endcapture %}
