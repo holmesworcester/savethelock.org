@@ -1,16 +1,13 @@
 <!doctype html>
-<html class="no-js">
+<html class="default-layout">
 <head>
-    {% include meta.html %}
-    {% include apple-touch-icons.html %}
+  {% include meta.html %}
 </head>
-<body>
+<body class="{{ page.class }}">
 
-    {{ content }}
+  {{ content }}
 
-    <!-- delete one of these footers -->
-    {% include fftf-footer.html %}
-    {% include fftfef-footer.html %}
+{% include fftf-footer.html %}
 {% include scripts.html %}
 </body>
 </html>
