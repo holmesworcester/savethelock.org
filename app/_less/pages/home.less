@@ -1,0 +1,45 @@
+h1 {
+  &::before {
+    content: '\01F512';
+    display: block;
+
+    @media screen and (min-width: @large-phone) {
+      display: inline;
+    }
+  }
+}
+
+form, section {
+  margin: 0 auto 7rem;
+  max-width: 70rem;
+  opacity: 0;
+  .fadeIn(1000ms, 900ms);
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto 2rem;
+}
+
+.coalition {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto 7rem;
+  max-width: 70rem;
+
+  h2 {
+    width: 100%;
+  }
+
+  img {
+    box-sizing: content-box;
+    height: auto;
+    max-height: 90pt;
+    max-width: 28rem;
+    padding: 2rem;
+  }
+}
