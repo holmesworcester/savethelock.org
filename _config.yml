@@ -13,8 +13,6 @@ description: Strong locks save lives.
 timezone: America/New_York
 googleanalytics: UA-26576645-30
 
-pathlead: '' # use this if you need a leading slash or directory on asset paths
-
 author:
   googleid: 102356128596404327231
   twitterid: 382376904
