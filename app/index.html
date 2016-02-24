@@ -20,8 +20,11 @@ description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
   </p>
 </form>
 
+{% comment %}
+Uncomment this section when we are ready to show off coalition & participants.
 <section>
 {% capture coalition %}{% include coalition.md %}{% endcapture %}
 {{ coalition | markdownify }}
 {% include participants.html %}
 </section>
+{% endcomment %}
