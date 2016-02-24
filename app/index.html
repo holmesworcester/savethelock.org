@@ -3,20 +3,11 @@ actiontext: "foo bar!"
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 ---
 
-<header>
-  <h1>Save the lock</h1>
-
-  <p>
-    <strong>Strong security saves lives.</strong> But the FBI is forcing Apple to
-    weaken the digital locks that keep us safe. On 3/3/16, take a stand for
-    security and safety by changing your site’s logo to a lock, and linking to
-    this statement.
-  </p>
-</header>
+<p>
+  The FBI is forcing Apple to weaken the digital locks that keep us safe. On <time datetime="2016-03-03">3/3/16</time>, take a stand for security and safety by changing your site’s logo to a lock, and linking to this statement. <strong>Will you do it?</strong>
+</p>
 
 <form action="#">
-  <h3>Will you do it?</h3>
-
   <label for="firstname">Name</label>
   <input type="text" id="firstname" name="firstname" placeholder="Your name"/>
   <label for="email">Email address</label>
@@ -29,38 +20,8 @@ description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
   </p>
 </form>
 
-<section class="coalition">
-  <h2>Who supports Apple’s stand?</h2>
-  <img src="/images/coalition/apple.png" alt="Apple">
-  <img src="/images/coalition/google.png" alt="Google">
-  <img src="/images/coalition/facebook.png" alt="Facebook">
-  <img src="/images/coalition/twitter.png" alt="Twitter">
-  <img src="/images/coalition/whatsapp.png" alt="WhatsApp">
-  <img src="/images/coalition/pia.png" alt="P.I.A.">
-  <img src="/images/coalition/expressvpn.png" alt="ExpressVPN">
-  <img src="/images/coalition/eff.png" alt="EFF">
-  <img src="/images/logo.png" alt="Fight for the Future">
-  <img src="/images/coalition/freedomofthepress.png" alt="Freedom of the Press Foundation">
-</section>
-
-<section class="protestors">
-
-<h2>Who’s joining the protest?</h2>
-
-<p>You can join as individuals or as a site/company</p>
-
-<h3>Sites</h3>
-
-<ul>
-  <li><a href="#">site1</a></li>
-  <li><a href="#">other site</a></li>
-</ul>
-
-
-<h3>People</h3>
-
-<ul>
-  <li><a href="https://akibraun.com/">Aki Rose Braun (akiro.se)</a></li>
-  <li><a href="#">other site</a></li>
-</ul>
+<section>
+{% capture coalition %}{% include coalition.md %}{% endcapture %}
+{{ coalition | markdownify }}
+{% include participants.html %}
 </section>

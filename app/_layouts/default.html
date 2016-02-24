@@ -5,7 +5,9 @@
 </head>
 <body class="{{ page.class }}">
 
-  {{ content }}
+{% include header.html %}
+
+{{ content }}
 
 {% include fftf-footer.html %}
 {% include scripts.html %}
