@@ -1,5 +1,15 @@
 header {
-  margin: 5rem auto 7rem;
+  background-image: url('/images/lock-bg.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 300px auto;
+  margin: 5rem auto 2.5rem;
+  padding-top: 40rem;
   opacity: 0;
   .fadeIn(1000ms);
+
+  @media screen and (min-width: @small-phone) {
+    background-size: auto;
+    padding-top: 44rem;
+  }
 }

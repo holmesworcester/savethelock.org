@@ -1,19 +1,15 @@
-h1 {
-  &::before {
-    content: '\01F512';
-    display: block;
+header + p, form, section {
+  opacity: 0;
+  .fadeIn(1000ms, 900ms);
+}
 
-    @media screen and (min-width: @large-phone) {
-      display: inline;
-    }
-  }
+header + p {
+  margin-bottom: 4.5rem;
 }
 
 form, section {
   margin: 0 auto 7rem;
   max-width: 70rem;
-  opacity: 0;
-  .fadeIn(1000ms, 900ms);
 }
 
 form {
@@ -21,6 +17,14 @@ form {
   display: flex;
   flex-direction: column;
   margin: 1rem auto 2rem;
+}
+
+section {
+  padding: 0 1rem;
+
+  @media screen and (min-width: @large-phone) {
+    padding: 0 2rem;
+  }
 }
 
 .coalition {
@@ -31,15 +35,21 @@ form {
   margin: 0 auto 7rem;
   max-width: 70rem;
 
-  h2 {
-    width: 100%;
-  }
-
   img {
     box-sizing: content-box;
     height: auto;
     max-height: 12rem;
+    max-width: 30rem;
     padding: 2rem;
     width: auto;
+  }
+}
+
+.participants {
+  max-width: 42rem;
+  text-align: left;
+
+  h2, p {
+    text-align: center;
   }
 }
