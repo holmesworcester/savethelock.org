@@ -1,6 +1,3 @@
-<script src="https://use.typekit.net/ldp0oqv.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
 {% capture title %}{% if page.title %}{{ page.title }} |{% endif %}{{ site.name }}{% endcapture %}
 {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 {% capture sharetitle %}{% if site.sharetitle %}{{ site.sharetitle }}{% else %}{% if page.sharetitle %}{{ page.sharetitle }}{% else %}{{ title }}{% endif %}{% endif %}{% endcapture %}
@@ -15,11 +12,10 @@
 <!-- *** social meta *** -->
 <!-- facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:image" content="{{ site.url }}/image.png" />
-<meta property="og:image:width" content="500" />
-<meta property="og:image:height" content="500" />
+<meta property="og:image" content="/images/lock-bg.png" />
+<meta property="og:image:width" content="331" />
+<meta property="og:image:height" content="435" />
 <meta property="og:site_name" content="{{ site.name }}" />
-<meta property="og:determiner" content="" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="en_GB" />
 <meta property="og:title" content="{{ sharetitle }}" />
@@ -30,7 +26,7 @@
 <meta name="twitter:site" content="{{ site.author.twitter }}">
 <meta name="twitter:title" content="{{ sharetitle }}">
 <meta name="twitter:description" content="{{ description }}"/>
-<meta name="twitter:image:src" content="{{ site.url }}/image.png">
+<meta name="twitter:image:src" content="/images/lock-bg.png">
 <meta name="twitter:domain" content="{{ site.url | remove:'http://' | remove:'https://' }}">
 <meta name="twitter:account_id" content="{{ site.author.twitterid }}" />
 <meta name="twittertext" content="{{ twittertext }}" />
@@ -38,7 +34,7 @@
 <!-- google+ -->
 <meta itemprop="name" content="{{ sharetitle }}">
 <meta itemprop="description" content="{{ description }}">
-<meta itemprop="image" content="{{ site.url }}/image.png">
+<meta itemprop="image" content="/images/lock-bg.png">
 <!-- /*** social meta *** -->
 
 <link rel="publisher" href="https://plus.google.com/{{ site.author.googleid }}">
