@@ -14,11 +14,6 @@
   font-size: 1.7rem;
 }
 
-label {
-  color: transparent;
-  .visually-hidden();
-}
-
 [type="text"],
 [type="email"] {
   .text-form-elements();
@@ -53,6 +48,33 @@ label {
   }
 }
 
+[for="select-country"] {
+  cursor: pointer;
+  font-style: italic;
+  height: auto;
+  margin: 1rem auto 1.5rem;
+  text-align: center;
+
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+
+  &.hidden {
+    height: 0;
+    margin: 0;
+  }
+}
+
+select {
+  display: none;
+  margin: 1.5rem auto;
+  max-width: 91%;
+
+  &.visible {
+    display: block;
+  }
+}
+
 .disclaimer {
   color: lighten(@blue-black, 20%);
   font-size: 80%;
@@ -65,4 +87,18 @@ label {
       display: block;
     }
   }
+}
+
+.submitted {
+  background-color: rgba(255, 255, 255, 0.85);
+  bottom: 0;
+  content: ' ';
+  display: block;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  .fadeIn(500ms)
 }

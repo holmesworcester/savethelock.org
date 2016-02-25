@@ -128,13 +128,22 @@
     }
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+.circle-spinner {
+  // Thanks to Martin Grubinger http://codepen.io/mgrubinger/pen/MYWQRx
+  animation-name: loader-spin;
+  animation-duration: @spinner_animation_duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border: dashed 0.1rem @spinner_blade_color;
+  border-radius: 50%;
+  height: 2.2rem;
+  margin: 2rem auto;
+  width: 2.2rem;
 
-  100% {
-    opacity: 1;
+  &.large {
+    width: 5rem;
+    height: 5rem;
+    border-width: 0.4rem;
   }
 }
 
