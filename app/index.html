@@ -5,17 +5,43 @@
   The FBI is forcing Apple to weaken the digital locks that keep us safe. On <time datetime="2016-03-03">3/3/16</time>, take a stand for security and safety by changing your site’s logo to a lock, and linking to this statement. <strong>Will you do it?</strong>
 </p>
 
-<form action="#">
-  <label for="firstname">Name</label>
-  <input type="text" id="firstname" name="firstname" placeholder="Your name"/>
-  <label for="email">Email address</label>
-  <input type="email" id="email" placeholder="Your email address"/>
-  <input type="submit" id="im-in" value="I’m in"/>
+<form action="https://actionnetwork.org/forms/save-the-lock/answers" method="post" title="Save the lock" data-identifier="86ef7be3-da62-480c-ab42-4643c0f93be8" data-host="{{ site.petitions_api }}">
+  <label class="visually-hidden" for="form-first_name">Your name
+    (optional):</label>
+  <input type="text" id="form-first_name" name="answer[first_name]" placeholder="Your name (optional)"/>
+
+  <label class="visually-hidden" for="form-email">Your email address:</label>
+  <input type="email" id="form-email" name="answer[email]" placeholder="Your email address" required/>
+
+  <label class="visually-hidden" for="form-zip_code">Your ZIP:</label>
+  <input type="text" id="form-zip_code" name="answer[zip_code]" placeholder="Your ZIP" required/>
+
+  <label for="select-country">
+    Not in the US?
+    <input type="hidden" value="US" name="answer[country]" id="hidden-country"/>
+  </label>
+
+  <select id="select-country">
+    {% for country in site.data.countries %}
+    <option value="{{ country[0] }}" {% if country[0] == 'US' %} selected{% endif %}>
+      {{ country[1] }}
+    </option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" id="im-in" value="I’m in" name="commit" />
   <p class="disclaimer">
     <em><a href="#">Fight for the Future</a> will send you instructions for
   participating,<br>
       as well as updates on this &amp; other campaigns.</em>
   </p>
+  <input type="hidden" name="utf8" value="✓">
+  <input type="hidden" name="authenticity_token" value="0T4Obtb0NSc88GcP+W4S67iTV1B9UhTVWbk6UjKj7+o="/>
+  <input type="hidden" name="subscription[tag_list]" value='["Encryption", "Extortion"]'/>
+  <input type="hidden" name="subscription[group]" value="13162" id="name_optin1" />
+  <input type="hidden" name="subscription[sub_group_id]" value="13162">
+  <input type="hidden" name="subscription[http_referer]" value="{{ site.url }}{{ page.url }}"/>
+  <input type="hidden" name="subscription[source]" value="www"/>
 </form>
 
 {% comment %}
@@ -26,3 +52,17 @@ Uncomment this section when we are ready to show off coalition & participants.
 {% include participants.html %}
 </section>
 {% endcomment %}
+
+<div class="hidden">
+  <section class="share-this-button-links" id="share-modal">
+    <a class="share-this-fb" href="https://facebook.com/sharer.php?u={{ site.url | cgi_escape }}{{ page.url | cgi_escape }}">
+      Share this
+    </a>
+    <a class="share-this-tw" href="https://twitter.com/share?text={{ tweet | strip_newlines | strip | cgi_escape }}&amp;url={{ site.url | cgi_escape }}{{ page.url | cgi_escape }}">
+      Tweet this
+    </a>
+    <a class="share-this-donate" href="https://donate.fightforthefuture.org/?utm_source=share-this-buttons&amp;utm_medium=web&amp;utm_campaign={{ page.title | slugify }}">
+      Donate $5
+    </a>
+  </section>
+</div>
