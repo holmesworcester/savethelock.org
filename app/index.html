@@ -6,8 +6,7 @@
 </p>
 
 <form action="https://actionnetwork.org/forms/save-the-lock/answers" method="post" title="Save the lock" data-identifier="86ef7be3-da62-480c-ab42-4643c0f93be8" data-host="{{ site.petitions_api }}">
-  <label class="visually-hidden" for="form-first_name">Your name
-    (optional):</label>
+  <label class="visually-hidden" for="form-first_name">Your name (optional):</label>
   <input type="text" id="form-first_name" name="answer[first_name]" placeholder="Your name (optional)"/>
 
   <label class="visually-hidden" for="form-email">Your email address:</label>
@@ -16,9 +15,9 @@
   <label class="visually-hidden" for="form-zip_code">Your ZIP:</label>
   <input type="text" id="form-zip_code" name="answer[zip_code]" placeholder="Your ZIP" required/>
 
-  <label for="select-country">
+  <label for="select-country" id="hidden-country">
     Not in the US?
-    <input type="hidden" value="US" name="answer[country]" id="hidden-country"/>
+    <input type="hidden" value="US" name="answer[country]" />
   </label>
 
   <select id="select-country">
@@ -37,7 +36,7 @@
   </p>
   <input type="hidden" name="utf8" value="✓">
   <input type="hidden" name="authenticity_token" value="0T4Obtb0NSc88GcP+W4S67iTV1B9UhTVWbk6UjKj7+o="/>
-  <input type="hidden" name="subscription[tag_list]" value='["Encryption", "Extortion"]'/>
+  <input type="hidden" name="subscription[tag_list]" value='["Encryption"]'/>
   <input type="hidden" name="subscription[group]" value="13162" id="name_optin1" />
   <input type="hidden" name="subscription[sub_group_id]" value="13162">
   <input type="hidden" name="subscription[http_referer]" value="{{ site.url }}{{ page.url }}"/>
