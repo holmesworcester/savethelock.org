@@ -1,74 +1,58 @@
-#fftf-footer, #fftfef-footer {
-    font-size: 1.4rem;
-    left: 0;
-    padding: 2rem 1rem;
-    position: absolute;
-    right: 0;
-    text-align: center;
-
-    @media screen and (min-width: @small-phone) {
-        padding: 2rem 1rem;
-    }
-    @media screen and (min-width: @large-tablet) {
-        padding: 2rem;
-    }
-
-    a {
-        &:link, &:visited, &:hover, &:active, &:focus {
-            font-weight: 400;
-            text-decoration: none;
-        }
-        &:hover, &:active, &:focus {
-            border-bottom: 0.1rem dotted lightgray;
-        }
-    }
-    dl {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin: 0 auto 1rem;
-        max-width: 310px;
-    }
-    dt {
-        margin-right: 1rem;
-        text-align: right;
-    }
-    dd {
-        flex-grow: 2;
-        text-align: left;
-    }
-    p {
-        margin-bottom: 1rem;
-    }
-}
-
 #fftf-footer {
-    background-color: @blue-black;
-    color: @white;
+  background-color: @blue-800;
+  color: @white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
 
-    a {
-        &:link, &:visited, &:hover, &:active, &:focus {
-            color: @white;
-        }
+  a {
+    &:link, &:visited, &:hover, &:active, &:focus {
+      color: @white;
+      font-weight: 400;
     }
-    img {
-        margin-top: 1rem;
+
+    &:link, &:visited {
+      text-decoration: none;
     }
+  }
+
+  div {
+    text-align: left;
+  }
+
+  strong {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
 }
 
-#fftfef-footer {
-    background-color: lighten(@white, 2%);
-    background-image: url('/images/fftfef-bg.gif');
-    color: lighten(@black, 20%);
-    a {
-        &:link, &:visited, &:hover, &:active, &:focus {
-            color: lighten(@black, 20%);
-        }
-    }
+.press-contact, .other-contact {
+  padding: 2rem;
+
+  a {
+    display: block;
+  }
+}
+
+.press-contact {
+  border-right: solid 2px #2c374f;
+}
+
+.copyrightless {
+  border-top: solid 2px #2c374f;
+  margin-bottom: 1.2rem;
+  padding-top: 2rem;
+  width: 100%;
 }
 
 .footer-logo {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  width: 43rem;
 }
