@@ -28,9 +28,9 @@ window.components.forms = function (doc, win) {
       ZIPLabel = doc.getElementById('form-zip_code');
 
     if (countrySelect.value !== 'US') {
-      ZIPLabel.setAttribute('placeholder', 'Your postal code');
+      ZIPLabel.setAttribute('placeholder', 'Post code');
     } else {
-      ZIPLabel.setAttribute('placeholder', 'Your ZIP');
+      ZIPLabel.setAttribute('placeholder', 'ZIP');
     }
   }
 

@@ -1,4 +1,5 @@
 .text-form-elements() {
+  appearance: none;
   border: solid 1px @blue;
   border-radius: 0.5rem;
   display: block;
@@ -6,12 +7,22 @@
   margin-bottom: 1rem;
   max-width: 32rem;
   padding: 1.5rem;
-  width: 90%;
+  width: 100%;
 }
 
 ::placeholder {
   color: @black;
   font-size: 1.7rem;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 2rem;
+  position: relative;
+  width: 29.5rem;
+  flex-wrap: wrap;
 }
 
 [type="text"],
@@ -20,21 +31,18 @@
 }
 
 [type="submit"] {
-  appearance: none;
+  .text-form-elements();
   background-color: @blue;
   border: none;
-  border-radius: 0.5rem;
   color: @white;
   cursor: pointer;
   font-family: @body-font;
   font-size: 2.4rem;
   font-weight: 900;
   letter-spacing: 1px;
-  max-width: 32rem;
   padding: 1.4rem 0;
   text-transform: uppercase;
   transition: background-color 300ms, bottom 100ms;
-  width: 90%;
 
   &:focus {
     box-shadow: 0 0 3px 3px @blue-black;
@@ -49,12 +57,21 @@
   }
 }
 
+#form-first_name {
+  width: 70%;
+}
+
+#form-zip_code {
+  width: 28%;
+}
+
 [for="select-country"] {
   cursor: pointer;
   font-style: italic;
   height: auto;
-  margin: 1rem auto 1.5rem;
   text-align: center;
+  font-size: 1.2rem;
+  margin: 0 0.5rem 1rem auto;
 
   &:hover, &:active, &:focus {
     text-decoration: underline;
