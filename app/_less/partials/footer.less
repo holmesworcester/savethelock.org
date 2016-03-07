@@ -1,9 +1,6 @@
 #fftf-footer {
   background-color: @blue-800;
   color: @white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   margin: 2rem auto;
   padding: 4rem 2rem;
 
@@ -28,19 +25,35 @@
     letter-spacing: 2px;
     text-transform: uppercase;
   }
+}
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: @large-phone) {
+    flex-direction: row;
+  }
 }
 
 .press-contact, .other-contact {
+  margin: 0 auto;
   padding: 2rem;
-
   a {
     display: block;
   }
 }
 
 .press-contact {
-  border-right: solid 2px #2c374f;
+  @media screen and (min-width: @large-phone) {
+    border-right: solid 2px #2c374f;
+    margin-right: 0;
+  }
+}
+
+.other-contact {
+  @media screen and (min-width: @large-phone) {
+    margin-left: 0;
+  }
 }
 
 .copyrightless {
