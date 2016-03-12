@@ -1,5 +1,3 @@
-## Who supports Apple’s stand?
-
 ![Apple][00]
 ![Google][01]
 ![Facebook][02]
@@ -10,7 +8,7 @@
 ![Electronic Frontier Foundation][07]
 ![Fight for the Future][08]
 ![Freedom of the Press Foundation][09]
-{: .coalition }
+{: .coalition-logos }
 
 [00]: /images/coalition/apple.png
 [01]: /images/coalition/google.png

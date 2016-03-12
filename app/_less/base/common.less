@@ -57,19 +57,27 @@ h1 {
 }
 
 h2 {
-  font-size: 2.8rem;
-
-  @media screen and (min-width: @small-phone) {
-    font-size: 2.55rem;
-  }
+  font-size: 4.2rem;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 
 h3 {
   font-size: 2rem;
 }
 
+header {
+  h2 {
+    font-size: 2.8rem;
+
+    @media screen and (min-width: @small-phone) {
+      font-size: 2.55rem;
+    }
+  }
+}
+
 a {
-  color: @blue-black;
+  color: @blue-900;
   font-weight: bold;
 
   &:link, &:visited {
@@ -83,6 +91,14 @@ a {
 
 em {
   font-style: italic;
+}
+
+strong {
+  font-weight: 600;
+}
+
+article {
+  padding: 7rem 2rem 5rem;
 }
 
 p {
@@ -103,10 +119,6 @@ ul {
 img {
   height: auto;
   max-width: 100%;
-}
-
-strong {
-  font-weight: 600;
 }
 
 .hidden {

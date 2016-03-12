@@ -21,11 +21,15 @@ section {
 }
 
 .coalition {
+  background-color: @grey;
+}
+
+.coalition-logos {
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 auto 7rem;
+  margin: 0 auto;
   max-width: 70rem;
 
   img {
@@ -35,6 +39,35 @@ section {
     max-width: 30rem;
     padding: 2rem;
     width: auto;
+  }
+}
+
+.participate {
+  figure {
+    margin: 2rem auto 3rem;
+    max-width: 40rem;
+
+    @media screen and (min-width: @small-phone) {
+      font-size: 2rem;
+      text-align: right;
+    }
+  }
+
+  figcaption {
+    font-weight: 600;
+
+    @media screen and (min-width: @small-phone) {
+      float: left;
+    }
+  }
+
+  a[download] {
+    color: @blue-400;
+    display: inline-block;
+    font-variant: small-caps;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: lowercase;
   }
 }
 
