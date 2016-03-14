@@ -1,3 +1,5 @@
+var $c  = document.createElement.bind(document);
+
 (function (doc, win) {
   "use strict";
 
@@ -20,4 +22,25 @@
   }
 
   triggerComponents();
+
+  var listenerFn = function() {
+    var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+    if (top > 300) {
+      window.removeEventListener('scroll', listenerFn);
+      document.querySelector('ul.share').classList.add('visible');
+    }
+  }
+
+  window.addEventListener('scroll', listenerFn);
+
+  var gl = document.querySelectorAll('button.google');
+    for (var i = 0; i < gl.length; i++) {
+        gl[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = window.location.protocol + '//' + window.location.host;
+            window.open('https://plus.google.com/share?url='+url, 'share_gl', 'width=500, height=300, toolbar=no, status=no, menubar=no');
+        }, false);
+    }
+
+
 })(document, window);

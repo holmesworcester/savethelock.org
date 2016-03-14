@@ -71,9 +71,12 @@ window.components.forms = function (doc, win) {
 
     errorMessageContainer.appendChild(errorMessage);
     errorMessageContainer.appendChild(errorMessageInfo);
+    /*
     new win.controllers.modals.PlainModalController({
       modal_content: errorMessageContainer
     });
+    */
+    alert(errorMessageInfo.textContent); // JL HACK ~ lol
 
     submitted.remove();
     submitButton.removeAttribute('disabled');
@@ -89,12 +92,14 @@ window.components.forms = function (doc, win) {
     var
       modalContent = $c('div');
 
+    /*
     modalContent.innerHTML = '<h2>Thanks for signing</h2>\n<p>Now, share this page to spread the word.</p>\n<p><small>…or, <a href="https://donate.fightforthefuture.org/?amount=5&frequency=just-once">chip in $5</a> to help us spread the message.</small></p>';
     modalContent.appendChild(doc.getElementById('share-modal'));
 
     new win.controllers.modals.PlainModalController({
       modal_content: modalContent
     });
+    */
   }
 
   function submitForm(event) {
