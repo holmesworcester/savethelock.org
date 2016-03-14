@@ -1,8 +1,6 @@
 ---
 ---
 
-{% capture coalition %}{% include coalition.md %}{% endcapture %}
-
 <p>
   The FBI is forcing Apple to weaken the digital locks that keep us safe. On <time datetime="2016-03-03">3/3/16</time>, take a stand for security and safety by changing your site&rsquo;s logo to a lock, and linking to this statement. <strong>Will you do it?</strong>
 </p>
@@ -12,7 +10,11 @@
 <article class="coalition">
   <h2>We stand together</h2>
   <p>These companies and individuals are taking a stand with us to oppose backdoors into the products and devices we depend on.</p>
-  {{ coalition | markdownify }}
+  <section class="coalition-logos">
+    {% for member in site.data.coalition %}
+    <img src="{{ member.image }}" alt="{{ member.name }}">
+    {% endfor %}
+  </section>
 </article>
 
 <article class="participate">
