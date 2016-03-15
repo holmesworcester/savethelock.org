@@ -10,7 +10,7 @@ window.components.forms = function (doc, win) {
   var
     body = doc.getElementsByTagName('body')[0],
     submitButton = body.querySelector('[type="submit"]'),
-    submitted = $c('div'),
+    submitted = doc.createElement('div'),
     countryLabel = doc.querySelector('[for="select-country"]'),
     countrySelect = doc.getElementById('select-country'),
     countryInput = doc.getElementById('hidden-country'),
@@ -46,6 +46,13 @@ window.components.forms = function (doc, win) {
     countryLabel.classList.add('hidden');
   }
 
+  function removeForm() {
+    commitmentForm.setAttribute('style', 'height: ' + commitmentForm.clientHeight + 'px;');
+    win.setTimeout(function(){
+      commitmentForm.setAttribute('style', 'height: 0;');
+    }, 20)
+  }
+
   function handleSigningError(e) {
     /**
      * Figures out what to say at just the right moment
@@ -54,9 +61,8 @@ window.components.forms = function (doc, win) {
      * */
 
     var
-      errorMessageContainer = $c('div'),
-      errorMessage = $c('h2'),
-      errorMessageInfo = $c('p');
+      errorMessage = doc.createElement('h2'),
+      errorMessageInfo = doc.createElement('p');
 
     commitmentForm.removeAttribute('disabled');
     submitted.remove();
@@ -69,14 +75,7 @@ window.components.forms = function (doc, win) {
       errorMessageInfo.textContent = 'this seems to be a weird error. the nerds have been alerted.';
     }
 
-    errorMessageContainer.appendChild(errorMessage);
-    errorMessageContainer.appendChild(errorMessageInfo);
-    /*
-    new win.controllers.modals.PlainModalController({
-      modal_content: errorMessageContainer
-    });
-    */
-    alert(errorMessageInfo.textContent); // JL HACK ~ lol
+    win.modals.generateModal([errorMessage, errorMessageInfo]);
 
     submitted.remove();
     submitButton.removeAttribute('disabled');
@@ -90,23 +89,19 @@ window.components.forms = function (doc, win) {
      * */
 
     var
-      modalContent = $c('div');
+      modalContent = doc.createElement('div'),
+      share = doc.getElementsByClassName('share')[0];
 
-    /*
+    share.classList.add('visible');
     modalContent.innerHTML = '<h2>Thanks for signing</h2>\n<p>Now, share this page to spread the word.</p>\n<p><small>…or, <a href="https://donate.fightforthefuture.org/?amount=5&frequency=just-once">chip in $5</a> to help us spread the message.</small></p>';
-    modalContent.appendChild(doc.getElementById('share-modal'));
 
-    new win.controllers.modals.PlainModalController({
-      modal_content: modalContent
-    });
-    */
+    win.modals.generateModal([modalContent, share]);
+    removeForm();
   }
 
   function submitForm(event) {
     /**
-     * Submits the form to ActionNetwork. If the script doesn’t, by now, know
-     * the action_network identifier, default isn’t prevented on the event and
-     * form submission proceeds as normal.
+     * Submits the form to ActionNetwork.
      * @param {event} event - Form submission event
      * */
 
@@ -147,7 +142,7 @@ window.components.forms = function (doc, win) {
        * */
 
       if (commitmentStatus.status >= 200 && commitmentStatus.status < 400) {
-        handleSigningSuccess()
+        handleSigningSuccess();
       } else {
         handleSigningError(commitmentStatus);
       }
